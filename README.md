@@ -19,7 +19,7 @@ Click to set a start and goal, and draw walls to block paths!
 
 | Visualization | Walls + Path |
 |:--------------:|:-------------:|
-| ![Demo 1](Images/demo1.png) | ![Demo 2](Images/demo2.png) | ![Demo 2](Images/demo.gif) |
+| ![Demo 1](Images/demo_1.png) | ![Demo 2](Images/demo_2.png) | ![Demo 2](Images/demo.gif) |
 
 _(Screenshots from live demo)_
 
