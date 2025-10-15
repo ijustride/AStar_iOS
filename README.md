@@ -8,7 +8,7 @@ Click to set a start and goal, and draw walls to block paths!
 ## 🚀 Features
 
 - ✅ Click to set **start** and **goal**
-- ✏️ Drag to draw **walls**
+- ✏️ Click to draw **walls**
 - 🔍 Finds the shortest path using **A\*** algorithm
 - 🧠 Supports 8-directional movement with **octile distance** heuristic
 - 💡 Built with **SwiftUI** — reactive and fully interactive
@@ -19,17 +19,13 @@ Click to set a start and goal, and draw walls to block paths!
 
 | Visualization | Walls + Path |
 |:--------------:|:-------------:|
-| ![Demo 1](Images/demo_1.png) | ![Demo 2](Images/demo_2.png) | ![Demo 2](Images/demo.gif) |
-
-_(Screenshots from live demo)_
+| ![Demo 1](Images/demo_2.png) | ![Demo 2](Images/demo_3.png) 
 
 ---
 
 ## 🎥 Demo Video
-
-https://github.com/yourusername/yourrepo/assets/123456789/abcdef123456
-
-_(click to watch on GitHub)_
+|:--------------:|
+| ![Demo 3](Images/demo.gif) |
 
 ---
 
