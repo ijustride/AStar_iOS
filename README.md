@@ -16,19 +16,20 @@ Click to set a start and goal, and draw walls to block paths!
 ---
 
 ## 🖼️ Preview
-
+<img src="Images/demo1.png" width="350" height="709"/>
+<img src="Images/demo2.png" width="350" height="709"/>
 | Visualization | Walls + Path |
 |:--------------:|:-------------:|
 
 | ![Demo 1](Images/demo1.png) | ![Demo 2](Images/demo2.png) | 
 
-_(Screenshots from live demo)_
+(Screenshots from live demo)
 
 ---
 
 ## 🎥 Demo Video
 
-
+<img src="Images/demo.gif" width="350" height="709"/>
 ![Demo 3](Images/demo.gif) |
 
 ---
