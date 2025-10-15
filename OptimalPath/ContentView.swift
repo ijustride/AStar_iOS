@@ -57,7 +57,8 @@ struct Grid {
     var walls: Set<Cell> = []
     
     func isValid(_ cell: Cell) -> Bool {
-        return cell.x >= 0 && cell.x < width && cell.y >= 0 && cell.y < height && !walls.contains(cell) && (!walls.contains(Cell(x: cell.x, y: cell.y - 1)) || !walls.contains(Cell(x: cell.x - 1, y: cell.y)))
+        return cell.x >= 0 && cell.x < width && cell.y >= 0 &&
+            cell.y < height && !walls.contains(cell)
     }
     func getNeighbours(of cell: Cell) -> [Cell]? {
         var neighbours: [Cell] = []
@@ -69,14 +70,26 @@ struct Grid {
                                         (1, -1),
                                         (-1, -1),
                                         (1, 1)]
-        for direction in directions {
-            if isValid(Cell(x: cell.x + direction.0, y: cell.y + direction.1)) {
-                neighbours.append(Cell(x: cell.x + direction.0, y: cell.y + direction.1))
+        for (dx, dy) in directions {
+            let nx = cell.x + dx
+            let ny = cell.y + dy
+            let neighbor = Cell(x: nx, y: ny)
+            
+            // Skip if not inside grid or wall
+            guard isValid(neighbor) else { continue }
+            
+            // If diagonal move, check corner blocking
+            if dx != 0 && dy != 0 {
+                let cell1 = Cell(x: cell.x + dx, y: cell.y)   // horizontal step
+                let cell2 = Cell(x: cell.x, y: cell.y + dy)   // vertical step
+                if !isValid(cell1) || !isValid(cell2) {
+                    continue  // both adjacent must be free
+                }
             }
+            
+            neighbours.append(neighbor)
         }
-        if neighbours.isEmpty {
-            return nil
-        }
+            
         return neighbours
     }
 }
@@ -161,6 +174,7 @@ func AStar (grid: Grid, start: Cell, goal: Cell) -> [Cell]? {
 }
 
 struct ContentView: View {
+    @State private var isDrawingWalls = false
     @StateObject private var viewModel = GridViewModel(width: 10, height: 10)
     
     var body: some View {
@@ -172,10 +186,10 @@ struct ContentView: View {
                         Rectangle()
                             .fill(color(for: cell))
                             .frame(width: 30, height: 30)
+                            .border(Color.white.opacity(0.2), width: 0.5)
                             .onTapGesture {
                                 handleTap(on: cell)
                             }
-                            .animation(.easeInOut(duration: 0.3), value: viewModel.path)
 
                     }
                 }
@@ -194,7 +208,6 @@ struct ContentView: View {
     }
     
     private func handleTap(on cell: Cell) {
-        // Tap order: set start, then goal, then toggle walls
         if viewModel.start == nil {
             viewModel.start = cell
         } else if viewModel.goal == nil {
@@ -203,6 +216,7 @@ struct ContentView: View {
             viewModel.toggleWall(at: cell)
         }
     }
+
     
     private func color(for cell: Cell) -> Color {
         if cell == viewModel.start {
