@@ -17,7 +17,9 @@ Click to set a start and goal, and draw walls to block paths!
 
 ## 🖼️ Preview
 
-                                         | Visualization | Walls + Path |
+<div align="center">
+| Visualization | Walls + Path |
+
 
 |:------------------------------------------------------:|:------------------------------------------------------:|
 
@@ -40,3 +42,4 @@ Click to set a start and goal, and draw walls to block paths!
 - **A\*** algorithm (custom implementation)
 
 ---
+</div>
