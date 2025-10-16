@@ -1,21 +1,21 @@
-# 🧭 Swift A* Pathfinding Visualizer
+# Swift A* Pathfinding Visualizer
 
 An interactive SwiftUI app that demonstrates the **A\*** pathfinding algorithm on a customizable grid.
 Click to set a start and goal, and draw walls to block paths!
 
 ---
 
-## 🚀 Features
+##  Features
 
-- ✅ Click to set **start** and **goal**
-- ✏️ Click to draw **walls**
-- 🔍 Finds the shortest path using **A\*** algorithm
-- 🧠 Supports 8-directional movement with **octile distance** heuristic
-- 💡 Built with **SwiftUI** — reactive and fully interactive
+- Click to set **start** and **goal**
+- Click to draw **walls**
+- Finds the shortest path using **A\*** algorithm
+- Supports 8-directional movement with **octile distance** heuristic
+- Built with **SwiftUI** — reactive and fully interactive
 
 ---
 
-## 🖼️ Preview
+## Preview
 
 <div align="center">
 | Visualization | Walls + Path |
@@ -29,13 +29,13 @@ Click to set a start and goal, and draw walls to block paths!
 
 ---
 
-## 🎥 Demo Video
+## Demo Video
 
 | <img src="Images/demo.gif" width="350" height="709"/> |
 
 ---
 
-## 🛠️ Technologies
+## Technologies
 
 - **Swift** (SwiftUI, Combine)
 - **Xcode 16**
